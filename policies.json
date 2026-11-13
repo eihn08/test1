@@ -1,0 +1,99 @@
+{
+  "currency": "VND",
+  "vat_rate_pct": 10,
+  "quote_validity_days": 30,
+  "discount_tiers": [
+    {
+      "tier_id": "TIER-1",
+      "name": "Chuẩn đơn hàng < 500 triệu",
+      "min_amount_vnd": 0,
+      "max_amount_vnd": 499999999,
+      "standard_hardware_discount_pct": 2.0,
+      "standard_service_discount_pct": 3.0,
+      "description": "Chiết khấu cơ bản cho đơn hàng doanh nghiệp vừa và nhỏ."
+    },
+    {
+      "tier_id": "TIER-2",
+      "name": "Gói dự án 500 triệu – < 1.5 tỷ",
+      "min_amount_vnd": 500000000,
+      "max_amount_vnd": 1499999999,
+      "standard_hardware_discount_pct": 4.0,
+      "standard_service_discount_pct": 6.0,
+      "description": "Chiết khấu gói tích hợp thiết bị + triển khai."
+    },
+    {
+      "tier_id": "TIER-3",
+      "name": "Dự án trọng điểm >= 1.5 tỷ",
+      "min_amount_vnd": 1500000000,
+      "max_amount_vnd": 999999999999,
+      "standard_hardware_discount_pct": 6.0,
+      "standard_service_discount_pct": 8.0,
+      "description": "Chiết khấu cho dự án quy mô lớn hoặc đa chi nhánh."
+    }
+  ],
+  "authority_matrix": {
+    "sales_rep": {
+      "title": "Nhân viên Kinh doanh",
+      "max_overall_discount_pct": 5.0,
+      "max_deal_value_vnd": 1500000000,
+      "min_gross_margin_pct": 18.0,
+      "can_approve_out_of_catalog": false,
+      "can_approve_schedule_overload": false
+    },
+    "sales_manager": {
+      "title": "Trưởng phòng Kinh doanh",
+      "max_overall_discount_pct": 10.0,
+      "max_deal_value_vnd": 4000000000,
+      "min_gross_margin_pct": 14.0,
+      "can_approve_out_of_catalog": false,
+      "can_approve_schedule_overload": false
+    },
+    "executive_board": {
+      "title": "Ban Giám đốc",
+      "max_overall_discount_pct": 25.0,
+      "max_deal_value_vnd": 999999999999,
+      "min_gross_margin_pct": 8.0,
+      "can_approve_out_of_catalog": true,
+      "can_approve_schedule_overload": true
+    }
+  },
+  "escalation_rules": [
+    {
+      "rule_id": "ESC-DISC-MGR",
+      "condition": "Chiết khấu đề xuất > 5% và <= 10% (hoặc giá trị hợp đồng >= 1.5 tỷ đến < 4 tỷ)",
+      "approver": "Trưởng phòng Kinh doanh",
+      "severity": "MEDIUM"
+    },
+    {
+      "rule_id": "ESC-DISC-EXEC",
+      "condition": "Chiết khấu đề xuất > 10% hoặc biên lợi nhuận gộp < 14% hoặc giá trị >= 4 tỷ",
+      "approver": "Ban Giám đốc",
+      "severity": "HIGH"
+    },
+    {
+      "rule_id": "ESC-OUT-OF-CAT",
+      "condition": "Yêu cầu có thiết bị / dịch vụ ngoài danh mục chuẩn Thiên Minh",
+      "approver": "Trưởng phòng Kỹ thuật + Ban Giám đốc",
+      "severity": "HIGH"
+    },
+    {
+      "rule_id": "ESC-SCHED-OPS",
+      "condition": "Thời hạn triển khai rơi vào tuần quá tải (>85%) hoặc không đủ lead-time mua hàng & thi công",
+      "approver": "Trưởng phòng Vận hành + Trưởng phòng Kinh doanh",
+      "severity": "HIGH"
+    },
+    {
+      "rule_id": "ESC-PENALTY-TERM",
+      "condition": "Hợp đồng có điều khoản phạt chậm tiến độ hoặc điều kiện thanh toán/SLA đặc biệt",
+      "approver": "Trưởng phòng Kinh doanh + Ban Giám đốc",
+      "severity": "MEDIUM"
+    }
+  ],
+  "mandatory_data_boundaries": [
+    "Mọi SKU và đơn giá trong dự thảo chào giá phải khớp 100% với Danh mục giải pháp hoặc được gắn cờ Ngoài danh mục có báo giá nhà cung cấp phụ.",
+    "Không được đề xuất gói giá thấp nếu thiếu bất kỳ tính năng bắt buộc nào (PoE, Layer 3, IPS throughput, HA, SLA 24x7).",
+    "Tổng ngày công triển khai và thời hạn cam kết phải nằm trong năng lực tuần khả dụng của Bộ phận Vận hành.",
+    "Mọi trường hợp vượt hạn mức chiết khấu, biên lợi nhuận thấp, hoặc ngoài danh mục phải có phê duyệt HITL ghi nhận trước khi xuất bản."
+  ]
+}
+

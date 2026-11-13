@@ -1,0 +1,48 @@
+[
+  {
+    "id": "RFP-2026-1101",
+    "title": "Nâng cấp hạ tầng mạng LAN & Wi-Fi 6 trụ sở 3 tầng - Tập đoàn Logistics Đông Nam",
+    "received_date": "2026-11-10",
+    "channel": "Email RFP + File đính kèm",
+    "sales_owner": "Nguyễn Minh Tuấn",
+    "raw_text": "Kính gửi Công ty Thiên Minh,\n\n[Đoạn 1 - Tổng quan] Tập đoàn Logistics Đông Nam đang mở rộng văn phòng điều hành tại Quận 7, TP.HCM (3 tầng, khoảng 180 nhân sự). Chúng tôi cần chào giá trọn gói thiết bị mạng và dịch vụ triển khai hoàn chỉnh.\n\n[Đoạn 2 - Yêu cầu thiết bị] Hạng mục gồm:\n- 04 Switch Access 24 port PoE+ (tối thiểu 370W, bắt buộc có uplink 10G SFP+ để đấu nối lên Core).\n- 01 Core Switch 24 port 10G SFP+ Layer 3 đầy đủ, có nguồn dự phòng kép (Redundant PSU).\n- 12 Access Point Wi-Fi 6 doanh nghiệp (chịu tải tối thiểu 200 user/AP, bắt buộc dùng nguồn PoE và hỗ trợ roaming mượt qua Wireless Controller).\n- 01 bộ Wireless Controller quản lý tập trung.\n\n[Đoạn 3 - Dịch vụ & Bảo trì] Thiên Minh thực hiện khảo sát, lắp đặt rack, cấu hình VLAN tách phòng ban và bàn giao tài liệu As-Built. Yêu cầu gói bảo trì 8x5 phản hồi trong 8 giờ trong vòng 12 tháng.\n\n[Đoạn 4 - Thời hạn, Ngân sách & Điều kiện bắt buộc] Thời hạn hoàn thành bàn giao trong vòng 5 tuần (trước ngày 18/12/2026). Ngân sách dự kiến tối đa 800 triệu VND (chưa VAT). Bắt buộc cung cấp đầy đủ CO/CQ chính hãng cho toàn bộ thiết bị.",
+    "expected_scenario": "Sẵn sàng chuẩn bị chào giá (Đủ thông tin, khớp năng lực/lịch tuần W48-W50, trong thẩm quyền)"
+  },
+  {
+    "id": "RFP-2026-1102",
+    "title": "Mở rộng mạng khu khám ngoại trú - Bệnh viện Đa khoa Tâm An",
+    "received_date": "2026-11-11",
+    "channel": "Ghi chú khảo sát + Email rời rạc",
+    "sales_owner": "Trần Thảo Vy",
+    "raw_text": "Email từ Phòng IT Bệnh viện Tâm An:\nChào bạn Vy, bên anh chuẩn bị mở thêm 2 khu khám mới tại cơ sở Bình Thạnh nên cần bên Thiên Minh báo giá gấp hệ thống mạng.\n\nGhi chú cuộc gọi: Anh Hùng (Trưởng phòng IT) bảo cần khoảng mấy con switch gắn cho các phòng khám và camera an ninh, cộng thêm wifi cho bệnh nhân và bác sĩ dùng máy tính bảng. Hệ thống phải chạy ổn định, bảo mật tốt, ưu tiên có firewall bảo vệ dữ liệu bệnh án.\n\nNgân sách dự kiến khoảng 500 triệu. Mong nhận phản hồi sớm.",
+    "expected_scenario": "Không đủ thông tin -> Tạo phiếu yêu cầu KH bổ sung (thiếu số lượng cụ thể, số port/PoE, thông số firewall IPS/HA, deadline, tiêu chuẩn SLA 24x7 hay 8x5)"
+  },
+  {
+    "id": "RFP-2026-1103",
+    "title": "Hệ thống Firewall HA & Core Switch cho Trung tâm giao dịch - Fintech An Phát",
+    "received_date": "2026-11-11",
+    "channel": "Cổng đấu thầu nội bộ",
+    "sales_owner": "Lê Hoàng Nam",
+    "raw_text": "[Phần 1 - Bối cảnh] Công ty CP Fintech An Phát tại Quận 3, TP.HCM cần nâng cấp cụm bảo mật và switch phân phối cho 350 nhân sự giao dịch tài chính.\n\n[Phần 2 - Hạng mục kỹ thuật bắt buộc]\n- 02 Firewall NGFW chạy cụm HA Active-Passive, bắt buộc thông lượng IPS tối thiểu 5 Gbps và có cổng 10G SFP+.\n- 02 Switch 48 port PoE+ Layer 3 đầy đủ, hỗ trợ Stacking.\n- Dịch vụ thiết kế & triển khai cấu hình HA failover test.\n- Gói bảo trì bắt buộc 24x7, SLA ứng cứu sự cố trong 4 giờ (12 tháng).\n\n[Phần 3 - Lưu ý ngân sách & tiến độ] Ngân sách tối đa 460 triệu VND (chưa VAT). Lưu ý: Bên chúng tôi yêu cầu hoàn tất triển khai và nghiệm thu gấp trong vòng 10 ngày (trước 22/11/2026). Yêu cầu CO/CQ đầy đủ.",
+    "expected_scenario": "Cảnh báo bẫy giá thấp (không thể dùng Firewall 60F hoặc Switch L2 rẻ) + Xung đột lịch triển khai (tuần W46/W47 đang quá tải 95%/86%) + Vượt ngân sách -> Cần chuyển duyệt & thương thảo lại"
+  },
+  {
+    "id": "RFP-2026-1104",
+    "title": "Triển khai SD-WAN & Wi-Fi 12 chi nhánh + Kho lạnh - Chuỗi Bán lẻ SunMart",
+    "received_date": "2026-11-09",
+    "channel": "Hồ sơ mời chào giá (RFQ)",
+    "sales_owner": "Nguyễn Minh Tuấn",
+    "raw_text": "YÊU CẦU CHÀO GIÁ CHUỖI SIÊU THỊ SUNMART (12 CHI NHÁNH MIỀN NAM)\n\n1. Hạng mục thiết bị cho 12 chi nhánh:\n- 12 Thiết bị SD-WAN chi nhánh hỗ trợ Dual WAN và 4G failover.\n- 24 Access Point Wi-Fi 6 doanh nghiệp (2 AP/chi nhánh) kèm 12 Switch Access 24 port PoE+ 370W.\n- Đặc biệt tại 03 kho đông lạnh ngoài trời: yêu cầu 03 Switch công nghiệp chống bụi nước chuẩn IP67 hoạt động ở nhiệt độ -20°C (thiết bị chuyên dụng ngoài danh mục phổ thông).\n\n2. Dịch vụ & Bảo trì:\n- Dịch vụ triển khai chuẩn hóa cho 12 chi nhánh và thiết kế SD-WAN kết nối về trụ sở chính.\n- Gói bảo trì 24x7 SLA 4 giờ.\n\n3. Điều kiện thương mại & tiến độ:\n- Thời hạn triển khai: 6 tuần (hoàn tất trước 24/12/2026).\n- Ngân sách mục tiêu: 1.65 tỷ VND (chưa VAT). Do mua số lượng lớn, SunMart đề nghị mức chiết khấu đặc biệt 14% trên tổng đơn hàng.\n- Điều khoản bắt buộc: CO/CQ đầy đủ và điều khoản phạt chậm tiến độ 1%/tuần.",
+    "expected_scenario": "Vượt thẩm quyền chiết khấu (14% > 10%), có thiết bị ngoài danh mục (Switch công nghiệp IP67), và có điều khoản phạt chậm tiến độ -> Chuyển duyệt Ban Giám đốc + Trưởng phòng Kỹ thuật"
+  },
+  {
+    "id": "RFP-2026-1105",
+    "title": "Mở rộng hạ tầng mạng Nhà máy thông minh - Công ty Sản xuất Hòa Bình",
+    "received_date": "2026-11-12",
+    "channel": "Bộ tài liệu kỹ thuật 5 đoạn",
+    "sales_owner": "Phạm Quốc Bảo",
+    "raw_text": "Đoạn 1 (Giới thiệu): Công ty Sản xuất Hòa Bình cần nâng cấp mạng cho khối văn phòng và dây chuyền lắp ráp mới tại KCN VSIP Bình Dương.\n\nĐoạn 2 (Yêu cầu chuyển mạch): Cần 02 Switch 48 port PoE+ hỗ trợ Layer 3 và Stacking cho khu văn phòng mới, cùng 01 Core Switch 24 port 10G SFP+ Redundant PSU làm trung tâm.\n\nĐoạn 3 (Không dây & Bảo mật): Trang bị 10 Access Point Wi-Fi 6 chịu tải cao (tối thiểu 200 user/AP) và 01 Firewall doanh nghiệp IPS >= 5 Gbps.\n\nĐoạn 4 (Triển khai & SLA): Yêu cầu dịch vụ khảo sát, lắp đặt, tách VLAN sản xuất - văn phòng, cấu hình bảo mật, cộng gói bảo trì 24x7 SLA ứng cứu 4h trong 12 tháng.\n\nĐoạn 5 (Tiến độ, Ngân sách & Pháp lý): Tiến độ yêu cầu trong 5 tuần (trước 20/12/2026). Ngân sách phê duyệt 750 triệu VND (chưa VAT). Điều kiện bắt buộc: Chứng chỉ CO/CQ, kỹ sư triển khai có chứng chỉ CCNP/NSE4, bảo hành tối thiểu 12 tháng.",
+    "expected_scenario": "Hồ sơ đa đoạn phức tạp - Cần gom đủ điều kiện bắt buộc, kiểm tra ngân sách (có thể cần chiết khấu cấp Trưởng phòng để khớp 750tr) và rà soát ranh giới dữ liệu 3 phòng ban"
+  }
+]
+

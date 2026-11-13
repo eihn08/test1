@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thiên Minh AI Agent — Aura Rose & Mint Dashboard</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <div class="bloom-shell" id="bloom-shell">
+    <!-- 1. LEFT SIDEBAR (Lunar Bloom Style with Collapse Support) -->
+    <aside class="left-sidebar" id="left-sidebar">
+      <div class="sidebar-top-bar">
+        <div class="brand-lockup">
+          <div class="brand-line-1">THIÊN MINH</div>
+          <div class="brand-line-2">AI AGENT</div>
+        </div>
+        <button class="sidebar-toggle-btn" id="btn-toggle-sidebar" title="Thu gọn / Mở rộng thanh bên (Click để thu nhỏ)">
+          <span class="st-icon" id="sidebar-toggle-icon">⇤</span>
+        </button>
+      </div>
+
+      <button class="active-aura-pill" id="btn-aura-pill" data-view="dashboard" title="Trung tâm RFP">
+        <span class="pill-grid-icon">⊞</span>
+        <span class="sb-text">TRUNG TÂM RFP</span>
+      </button>
+
+      <nav class="left-nav" id="main-nav">
+        <button class="ln-item active" data-view="dashboard" title="Tổng quan">
+          <span class="ln-icon">🏠</span>
+          <span class="sb-text">Tổng quan</span>
+        </button>
+        <button class="ln-item" data-view="workbench" title="Xử lý AI Agent">
+          <span class="ln-icon">🤖</span>
+          <span class="sb-text">Xử lý AI Agent</span>
+        </button>
+        <button class="ln-item" id="nav-shortcut-pending" title="Cần xác minh & Duyệt">
+          <span class="ln-icon">🛡️</span>
+          <span class="sb-text">Cần xác minh & Duyệt</span>
+          <span class="ln-badge" id="side-badge-pending">3</span>
+        </button>
+        <button class="ln-item" data-view="knowledge" title="Danh mục & Lịch VH">
+          <span class="ln-icon">💼</span>
+          <span class="sb-text">Danh mục & Lịch VH</span>
+        </button>
+        <button class="ln-item" data-view="settings" title="Cấu hình AI">
+          <span class="ln-icon">⚙️</span>
+          <span class="sb-text">Cấu hình AI</span>
+        </button>
+      </nav>
+
+      <div class="left-divider"></div>
+
+      <div class="left-nav secondary">
+        <button class="ln-item" id="btn-open-new-rfp-side" title="Tiếp nhận RFP mới">
+          <span class="ln-icon">📝</span>
+          <span class="sb-text">Tiếp nhận RFP mới</span>
+        </button>
+        <button class="ln-item" id="btn-reset-demo-side" title="Khôi phục 5 mẫu">
+          <span class="ln-icon">↺</span>
+          <span class="sb-text">Khôi phục 5 mẫu</span>
+        </button>
+      </div>
+
+      <div class="left-spacer"></div>
+
+      <button class="ln-item muted-link" id="btn-open-copilot-help" title="Hướng dẫn AI Agent">
+        <span class="ln-icon">❓</span>
+        <span class="sb-text">Hướng dẫn AI</span>
+        <span class="sb-text" style="margin-left:auto;">•••</span>
+      </button>
+    </aside>
+
+    <!-- 2. CENTER WORKSPACE -->
+    <main class="center-stage">
+      <!-- Top Search & Action Squircles -->
+      <header class="center-topbar">
+        <div class="search-box">
+          <span class="sb-icon">🔍</span>
+          <input type="text" id="global-search" placeholder="Tìm nhanh hồ sơ RFP, khách hàng hoặc mã thiết bị..." autocomplete="off" />
+          <div class="search-dropdown" id="search-dropdown"></div>
+        </div>
+        <div class="topbar-squircles">
+          <button class="pink-squircle" id="btn-toggle-copilot-focus" title="Trò chuyện với AI Agent">
+            <span>💬</span>
+          </button>
+          <button class="pink-squircle" id="btn-notif-bell" title="Hồ sơ cần xử lý ngay">
+            <span>🔔</span>
+            <span class="sq-dot" id="notif-count">3</span>
+          </button>
+        </div>
+      </header>
+
+      <!-- VIEW 1: DASHBOARD (Lunar Bloom Bento Grid) -->
+      <section class="view active" id="view-dashboard">
+        <!-- Big Pastel Rose Hero Banner -->
+        <div class="hero-bloom">
+          <div class="hero-copy">
+            <h1>Thiên Minh AI:<br/>Đánh giá Chào giá Dự án</h1>
+            <p class="hero-sub">Tự động bóc tách RFP đa đoạn, chặn gói giá thấp thiếu tính năng, đối chiếu lịch triển khai và kiểm soát chuyển duyệt HITL.</p>
+            <div class="hero-btns">
+              <button class="btn btn-white-pill" id="btn-hero-start">Bắt đầu xử lý →</button>
+              <button class="btn btn-outline-white-pill" id="btn-open-new-rfp">+ Tiếp nhận RFP mới</button>
+            </div>
+          </div>
+          <!-- Custom Cute Pastel AI Gateway SVG Illustration -->
+          <div class="hero-illustration" aria-hidden="true">
+            <svg viewBox="0 0 220 175" width="210" height="165" fill="none">
+              <!-- Fairy/Tech Wings -->
+              <path d="M72 78C38 56 26 76 42 102C52 118 70 112 76 100" fill="#ffe4eb" fill-opacity="0.72" stroke="#f6a6ba" stroke-width="2"/>
+              <path d="M148 78C182 56 194 76 178 102C168 118 150 112 144 100" fill="#ffe4eb" fill-opacity="0.72" stroke="#f6a6ba" stroke-width="2"/>
+              <!-- Arch Portal -->
+              <path d="M68 152V78C68 50 87 32 110 32C133 32 152 50 152 78V152H68Z" fill="#fff7f9" stroke="#d59a8c" stroke-width="4"/>
+              <path d="M76 146V80C76 57 91 42 110 42C129 42 144 57 144 80V146H76Z" fill="#fde5ec"/>
+              <!-- Portal Window & AI Spark -->
+              <path d="M96 76C96 66 102 60 110 60C118 60 124 66 124 76H96Z" fill="#cbe8d4" stroke="#8ab897" stroke-width="2.5"/>
+              <rect x="76" y="96" width="68" height="5" rx="2.5" fill="#d59a8c" opacity="0.55"/>
+              <circle cx="132" cy="116" r="4" fill="#d59a8c"/>
+              <!-- Blossoms & Leaves -->
+              <circle cx="68" cy="144" r="14" fill="#ffd2de" stroke="#f297ae" stroke-width="2"/>
+              <circle cx="68" cy="144" r="4.5" fill="#fff"/>
+              <circle cx="152" cy="144" r="14" fill="#ffd2de" stroke="#f297ae" stroke-width="2"/>
+              <circle cx="152" cy="144" r="4.5" fill="#fff"/>
+              <circle cx="92" cy="34" r="8" fill="#ffdbe4" stroke="#f297ae" stroke-width="1.5"/>
+              <circle cx="110" cy="27" r="9.5" fill="#ffd2de" stroke="#f297ae" stroke-width="1.5"/>
+              <circle cx="128" cy="34" r="8" fill="#ffdbe4" stroke="#f297ae" stroke-width="1.5"/>
+              <path d="M46 154C75 148 145 148 174 154" stroke="#9ec9aa" stroke-width="5" stroke-linecap="round"/>
+              <!-- Floating AI Badge -->
+              <rect x="92" y="109" width="36" height="22" rx="11" fill="#ffffff" stroke="#f48da6" stroke-width="2"/>
+              <text x="110" y="124" text-anchor="middle" font-size="11" font-weight="800" fill="#e06384">AI</text>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Bento Middle Section (Exact 3-Column Bento Feeling from Template!) -->
+        <div class="bento-row">
+          <!-- Featured Spotlight Card (Left - like "Continue" card) -->
+          <div class="bento-card spotlight-card" id="spotlight-card"></div>
+
+          <!-- Center Mini Bento Stack (4 Cute Category Tiles + 2 Folder Cards) -->
+          <div class="bento-mid-col">
+            <div class="bento-card tiles-card">
+              <div class="tiles-top-dots">
+                <span class="dot d-mint"></span>
+                <span class="dot d-amber"></span>
+                <span class="dot d-pink" style="margin-left:auto;">✕</span>
+              </div>
+              <div class="four-tiles" id="kpi-four-tiles"></div>
+              <div class="tiles-footer">
+                <button class="btn-pink-sm" id="btn-filter-all-pill">Xem tất cả</button>
+                <div class="page-nums" id="triage-filters">
+                  <button class="pnum active" data-filter="ALL" title="Tất cả">1</button>
+                  <button class="pnum" data-filter="READY" title="Sẵn sàng chào giá">2</button>
+                  <button class="pnum" data-filter="CLARIFY" title="Thiếu thông tin">3</button>
+                  <button class="pnum" data-filter="ESCALATE" title="Chuyển duyệt">4</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="folder-pair">
+              <div class="bento-card folder-card" id="folder-catalog">
+                <div class="folder-head">
+                  <span class="folder-icon">📁</span>
+                  <span class="dots-more">•••</span>
+                </div>
+                <div class="folder-title">Danh mục Giải pháp</div>
+                <div class="folder-sub" id="folder-catalog-count">+ 15 SKU chuẩn</div>
+              </div>
+              <div class="bento-card folder-card" id="folder-schedule">
+                <div class="folder-head">
+                  <span class="folder-icon mint">📅</span>
+                  <span class="dots-more">•••</span>
+                </div>
+                <div class="folder-title">Lịch Đội Kỹ thuật</div>
+                <div class="folder-sub" id="folder-schedule-count">+ 6 tuần khả dụng</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Tall Card (Like Portrait Photo Card -> Live Pipeline Funnel & Traps Meter) -->
+          <div class="bento-card tall-metric-card" id="tall-metric-card"></div>
+        </div>
+
+        <!-- Visual Chart + Pipeline Table -->
+        <div class="bento-chart-row">
+          <div class="bento-card">
+            <div class="card-head">
+              <div>
+                <h3>Biểu đồ Giá trị Chào giá & Năng lực Tuần</h3>
+                <span class="muted">Di chuột lên điểm tròn để xem chi tiết từng mốc</span>
+              </div>
+              <div class="pill-toggle" id="area-chart-mode">
+                <button class="pt-btn active" data-mode="pipeline">Giá trị Pipeline</button>
+                <button class="pt-btn" data-mode="capacity">Tải Kỹ thuật (%)</button>
+              </div>
+            </div>
+            <div class="area-chart-wrap" id="area-chart-container"></div>
+          </div>
+
+          <div class="bento-card">
+            <div class="card-head">
+              <div>
+                <h3>Tải Năng lực Vận hành theo Tuần</h3>
+                <span class="muted">Tránh cam kết deadline vào tuần quá tải</span>
+              </div>
+            </div>
+            <div id="capacity-mini-container"></div>
+          </div>
+        </div>
+
+        <!-- Clean Interactive RFP Pipeline Table -->
+        <div class="bento-card">
+          <div class="card-head">
+            <div>
+              <h3>Bảng Điều phối Hồ sơ RFP/RFQ</h3>
+              <span class="muted">Nhấn vào hồ sơ bất kỳ để mở quy trình AI Agent từng bước</span>
+            </div>
+            <span class="badge badge-pink" id="table-filter-label">Đang hiện: Tất cả hồ sơ</span>
+          </div>
+          <div class="table-wrap">
+            <table class="data-table interactive-rows">
+              <thead>
+                <tr>
+                  <th>Mã hồ sơ</th>
+                  <th>Khách hàng & Dự án</th>
+                  <th>Đủ thông tin</th>
+                  <th>Giá đề xuất / Ngân sách</th>
+                  <th>Cảnh báo & Bẫy giá thấp</th>
+                  <th>Phân loại</th>
+                  <th class="text-right">Mở xử lý</th>
+                </tr>
+              </thead>
+              <tbody id="cases-tbody"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- VIEW 2: AI AGENT WORKBENCH -->
+      <section class="view" id="view-workbench">
+        <div class="bento-card workbench-bar">
+          <div class="wb-select-group">
+            <label for="wb-case-select">📂 Hồ sơ:</label>
+            <select id="wb-case-select"></select>
+          </div>
+          <div class="wb-actions">
+            <span id="wb-status-badge" class="badge"></span>
+            <button class="btn btn-soft-pink btn-sm" id="btn-copilot-this-case">✨ Hỏi AI hồ sơ này</button>
+            <button class="btn btn-pink-pill btn-sm" id="btn-rerun-agent">▶ Chạy lại AI Agent</button>
+          </div>
+        </div>
+
+        <!-- 5-STEP MINIMALIST HORIZONTAL STEPPER (Theo chuẩn người dùng cung cấp) -->
+        <div class="stepper-horizontal-card">
+          <div class="stepper-track-wrap">
+            <div class="stepper-connecting-line">
+              <div class="stepper-progress-fill" id="stepper-progress-fill"></div>
+            </div>
+            <div class="stepper-nodes-row" id="wb-stepper"></div>
+          </div>
+        </div>
+
+        <!-- STEP CONTENT WRAPPER (HIỂN THỊ DUY NHẤT NỘI DUNG BƯỚC ĐANG CHỌN) -->
+        <div id="wb-step-container"></div>
+      </section>
+
+      <!-- VIEW 3: KNOWLEDGE BASE -->
+      <section class="view" id="view-knowledge">
+        <div class="bento-card">
+          <div class="card-head">
+            <div>
+              <h2>Kho Dữ liệu Ranh giới & Chính sách Thiên Minh</h2>
+              <span class="muted">AI Agent chỉ trích xuất và tính toán dựa trên dữ liệu chuẩn đã kiểm chứng</span>
+            </div>
+            <div class="sub-tabs inline" id="kb-tabs">
+              <button class="sub-tab active" data-kb="catalog">Danh mục & Đơn giá</button>
+              <button class="sub-tab" data-kb="schedule">Năng lực & Lịch tuần</button>
+              <button class="sub-tab" data-kb="policies">Chiết khấu & Thẩm quyền</button>
+            </div>
+          </div>
+          <div id="kb-content"></div>
+        </div>
+      </section>
+
+      <!-- VIEW 4: SETTINGS -->
+      <section class="view" id="view-settings">
+        <div class="bento-card settings-card">
+          <div class="card-head">
+            <div>
+              <h2>Cấu hình AI Engine (Hybrid: Offline + Gemini / OpenAI)</h2>
+              <span class="muted">Chạy Offline NLP ngay không cần API Key. Có thể gắn Gemini hoặc OpenAI Key để AI phân tích sâu hơn.</span>
+            </div>
+          </div>
+          <form id="settings-form" class="form-grid">
+            <div class="form-group">
+              <label>Chế độ vận hành Engine</label>
+              <select id="set-engine-mode">
+                <option value="hybrid">Hybrid (Dùng LLM nếu có Key, tự Fallback Offline)</option>
+                <option value="offline">Chỉ Offline Engine (Rule-based + NLP nội bộ)</option>
+                <option value="llm">Ưu tiên LLM API</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Nhà cung cấp LLM</label>
+              <select id="set-provider">
+                <option value="gemini">Google Gemini API</option>
+                <option value="openai">OpenAI API</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Model</label>
+              <input type="text" id="set-model" placeholder="gemini-2.5-flash hoặc gpt-4o-mini" />
+            </div>
+            <div class="form-group">
+              <label>API Key <span id="set-key-status" class="muted"></span></label>
+              <input type="password" id="set-api-key" placeholder="Nhập API Key mới (để trống nếu giữ nguyên)" />
+            </div>
+            <div class="form-actions full-width">
+              <button type="submit" class="btn btn-pink-pill">💾 Lưu cấu hình</button>
+              <button type="button" class="btn btn-soft-pink" id="btn-test-llm">🔌 Kiểm tra kết nối LLM</button>
+              <button type="button" class="btn btn-danger-outline" id="btn-clear-key">Xóa API Key</button>
+            </div>
+            <div id="settings-test-result" class="full-width"></div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!-- 3. RIGHT CONTEXT SIDEBAR (Lunar Bloom Profile + Shop Queue + New Message AI Chat!) -->
+    <aside class="right-sidebar">
+      <!-- Profile + #COLORS Bar -->
+      <div class="right-profile">
+        <div class="rp-top">
+          <div>
+            <div class="rp-name">Trưởng phòng KD</div>
+            <div class="rp-handle">@thienminh.agent</div>
+            <div class="rp-engine-tag" id="engine-status-pill">⚡ Hybrid AI Ready</div>
+          </div>
+          <div class="rp-avatar">TM</div>
+        </div>
+        <div class="colors-label">#PALETTE & SỨC KHỎE</div>
+        <div class="colors-bar" title="Tỷ lệ hài hòa: Mint (Đạt chuẩn) • Rose (Chuyển duyệt / Xác minh)"></div>
+      </div>
+
+      <!-- Quick RFP Queue (Exact "Flower Shop" Glossy Pink Cards!) -->
+      <div class="right-block">
+        <div class="rb-head">
+          <span>Hồ sơ RFP Nổi bật</span>
+          <span class="dots-more">•••</span>
+        </div>
+        <div class="shop-queue" id="right-rfp-queue"></div>
+      </div>
+
+      <!-- Integrated AI Agent Message Widget (Exact "New Message" Glossy Pink Card!) -->
+      <div class="right-block message-block">
+        <div class="rb-head">
+          <span>AI Agent Chat</span>
+          <span class="dots-more" id="btn-expand-copilot" title="Mở rộng cửa sổ chat" style="cursor:pointer;">⤢</span>
+        </div>
+        <div class="ai-msg-card">
+          <div class="amc-head">
+            <div class="amc-avatar">🤖</div>
+            <div>
+              <div class="amc-name">Thiên Minh AI</div>
+              <div class="amc-time">● Sẵn sàng hỗ trợ</div>
+            </div>
+          </div>
+          <div class="amc-body" id="mini-copilot-preview">
+            Xin chào! Mình đã rà soát 5 hồ sơ RFP. Hỏi mình bất kỳ câu nào hoặc chọn gợi ý bên dưới nhé ✨
+          </div>
+          <div class="amc-quick-chips" id="mini-copilot-chips"></div>
+          <form class="amc-input-row" id="mini-copilot-form">
+            <input type="text" id="mini-copilot-input" placeholder="Hỏi nhanh AI Agent..." autocomplete="off" />
+            <button type="submit" title="Gửi câu hỏi">➤</button>
+          </form>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <!-- EXPANDED AI COPILOT DRAWER -->
+  <aside class="copilot-drawer" id="copilot-drawer" aria-hidden="true">
+    <div class="copilot-header">
+      <div class="copilot-title-wrap">
+        <div class="copilot-avatar">🤖</div>
+        <div>
+          <div class="copilot-title">Thiên Minh AI Copilot</div>
+          <div class="copilot-sub" id="copilot-context-label">Kết nối dữ liệu thời gian thực</div>
+        </div>
+      </div>
+      <button class="btn-icon" id="btn-close-copilot">✕</button>
+    </div>
+    <div class="copilot-messages" id="copilot-messages"></div>
+    <div class="copilot-prompts" id="copilot-prompts"></div>
+    <form class="copilot-input-bar" id="copilot-form">
+      <input type="text" id="copilot-input" placeholder="Hỏi AI về hồ sơ, bẫy giá, lịch triển khai..." autocomplete="off" />
+      <button type="submit" class="btn btn-pink-pill btn-sm">Gửi</button>
+    </form>
+  </aside>
+
+  <!-- MODAL: NEW RFP -->
+  <div class="modal-backdrop" id="modal-new-rfp">
+    <div class="modal">
+      <div class="modal-header">
+        <h3>Tiếp nhận Yêu cầu Chào giá (RFP/RFQ) Mới</h3>
+        <button class="btn-icon" id="close-new-rfp">✕</button>
+      </div>
+      <form id="form-new-rfp" class="modal-body">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Tiêu đề dự án / hồ sơ</label>
+            <input type="text" id="new-rfp-title" required placeholder="VD: Nâng cấp mạng LAN & Firewall - Công ty ABC" />
+          </div>
+          <div class="form-group">
+            <label>Nhân viên Kinh doanh phụ trách</label>
+            <input type="text" id="new-rfp-owner" value="Nguyễn Minh Tuấn" />
+          </div>
+        </div>
+
+        <!-- TẢI FILE DỮ LIỆU LÊN (DRAG & DROP / FILE INPUT) -->
+        <div class="rfp-upload-zone" id="rfp-drop-zone">
+          <input type="file" id="rfp-file-input" accept=".txt,.md,.json,.csv,.doc,.docx,.pdf,.rtf" style="display:none;" />
+          <div class="drop-icon">📂</div>
+          <div class="drop-text">
+            <strong>Kéo thả file tài liệu RFP vào đây</strong> hoặc <span class="drop-link" id="rfp-browse-trigger">chọn file từ máy tính</span>
+          </div>
+          <div class="drop-sub">Hỗ trợ .pdf, .docx, .txt, .md, .json, .csv • Hệ thống tự động đọc và trích xuất nội dung vào ô bên dưới</div>
+          <div id="rfp-file-badge" class="rfp-file-badge" style="display:none;"></div>
+        </div>
+
+        <div class="form-group">
+          <label>Nội dung yêu cầu khách hàng (Văn bản bóc tách hoặc dán nguyên văn nhiều đoạn tài liệu / email)</label>
+          <textarea id="new-rfp-text" rows="7" required placeholder="Dán nội dung RFP hoặc tải file lên ở trên..."></textarea>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-soft-pink btn-sm" id="btn-fill-template">✨ Chèn mẫu thử nhanh</button>
+          <div class="spacer"></div>
+          <button type="button" class="btn btn-soft-pink" id="cancel-new-rfp">Hủy</button>
+          <button type="submit" class="btn btn-pink-pill">🤖 Tiếp nhận & Chạy AI Agent</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- MODAL: PRINTABLE QUOTATION PREVIEW -->
+  <div class="modal-backdrop" id="modal-quote-preview">
+    <div class="modal modal-lg">
+      <div class="modal-header">
+        <h3>Bản Chào giá Chính thức (Preview & Xuất bản)</h3>
+        <button class="btn-icon" id="close-quote-preview">✕</button>
+      </div>
+      <div class="modal-body" id="quote-preview-body"></div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-soft-pink" id="btn-download-quote-md">⬇ Tải file Markdown (.md)</button>
+        <button type="button" class="btn btn-pink-pill" onclick="window.print()">🖨 In / Lưu PDF</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast-container" id="toast-container"></div>
+  <script src="/app.js"></script>
+</body>
+</html>

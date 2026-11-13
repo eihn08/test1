@@ -1,0 +1,299 @@
+{
+  "company": {
+    "name": "Công ty Cổ phần Công nghệ & Hạ tầng Thiên Minh",
+    "short_name": "Thiên Minh Company",
+    "tax_code": "0315889922",
+    "address": "Tầng 8, Tòa nhà TechHub, Quận 1, TP. Hồ Chí Minh",
+    "hotline": "1900 6889",
+    "email": "sales@thienminhtech.vn"
+  },
+  "solutions": [
+    {
+      "sku": "TM-SW-ACC-L2-24",
+      "name": "Switch Access 24-Port Gigabit L2 (Entry)",
+      "category": "Access Switch",
+      "vendor": "Cisco Business / Ruijie",
+      "unit": "Thiết bị",
+      "unit_price_vnd": 9500000,
+      "cost_vnd": 7200000,
+      "lead_time_days": 5,
+      "specs": {
+        "ports": 24,
+        "poe": false,
+        "poe_watts": 0,
+        "uplink_10g": false,
+        "layer3": false,
+        "stacking": false,
+        "industrial_ip67": false,
+        "switching_capacity_gbps": 56
+      },
+      "features": ["24x 1G RJ45", "4x 1G SFP", "Layer 2 cơ bản", "VLAN 802.1Q"],
+      "notes": "Gói giá thấp cho văn phòng nhỏ, KHÔNG hỗ trợ PoE, KHÔNG có uplink 10G và KHÔNG định tuyến Layer 3."
+    },
+    {
+      "sku": "TM-SW-ACC-POE-24",
+      "name": "Switch Access 24-Port Gigabit PoE+ 370W L2+",
+      "category": "Access Switch",
+      "vendor": "Aruba / Cisco Catalyst 1200",
+      "unit": "Thiết bị",
+      "unit_price_vnd": 24500000,
+      "cost_vnd": 18500000,
+      "lead_time_days": 7,
+      "specs": {
+        "ports": 24,
+        "poe": true,
+        "poe_watts": 370,
+        "uplink_10g": true,
+        "layer3": false,
+        "stacking": false,
+        "industrial_ip67": false,
+        "switching_capacity_gbps": 128
+      },
+      "features": ["24x 1G PoE+ (370W)", "4x 10G SFP+ uplink", "Static routing cơ bản", "ACL & 802.1X"],
+      "notes": "Phù hợp cấp nguồn cho Access Point Wi-Fi 6 và Camera IP, có uplink 10G."
+    },
+    {
+      "sku": "TM-SW-ACC-POE-48-L3",
+      "name": "Switch Access/Dist 48-Port Gigabit PoE+ 740W Layer 3 Stackable",
+      "category": "Access Switch",
+      "vendor": "Cisco Catalyst 9200L / Aruba 6200F",
+      "unit": "Thiết bị",
+      "unit_price_vnd": 68000000,
+      "cost_vnd": 52000000,
+      "lead_time_days": 10,
+      "specs": {
+        "ports": 48,
+        "poe": true,
+        "poe_watts": 740,
+        "uplink_10g": true,
+        "layer3": true,
+        "stacking": true,
+        "industrial_ip67": false,
+        "switching_capacity_gbps": 176
+      },
+      "features": ["48x 1G PoE+ (740W)", "4x 10G SFP+", "Full Layer 3 OSPF/RIP/Static", "Stacking 80Gbps", "CO/CQ đầy đủ"],
+      "notes": "Chuẩn doanh nghiệp, hỗ trợ Layer 3 đầy đủ, Stacking và cấp nguồn PoE+ công suất lớn."
+    },
+    {
+      "sku": "TM-SW-CORE-L3-24SFP",
+      "name": "Core Switch 24-Port 10G SFP+ Full Layer 3 Redundant PSU",
+      "category": "Core Switch",
+      "vendor": "Cisco Catalyst 9300X / Aruba 8325",
+      "unit": "Thiết bị",
+      "unit_price_vnd": 145000000,
+      "cost_vnd": 112000000,
+      "lead_time_days": 14,
+      "specs": {
+        "ports": 24,
+        "poe": false,
+        "poe_watts": 0,
+        "uplink_10g": true,
+        "layer3": true,
+        "stacking": true,
+        "redundant_psu": true,
+        "industrial_ip67": false,
+        "switching_capacity_gbps": 640
+      },
+      "features": ["24x 10G SFP+", "4x 25G/40G QSFP", "Dual Redundant PSU", "OSPF/BGP/VRF", "High Availability"],
+      "notes": "Core Switch chuyên dụng cho hạ tầng doanh nghiệp vừa & lớn, hỗ trợ nguồn dự phòng và định tuyến động."
+    },
+    {
+      "sku": "TM-FW-ENTRY-1G",
+      "name": "Firewall NGFW Entry (IPS 1.2 Gbps, Single Unit)",
+      "category": "Firewall",
+      "vendor": "Fortinet FortiGate 60F",
+      "unit": "Thiết bị",
+      "unit_price_vnd": 26000000,
+      "cost_vnd": 19800000,
+      "lead_time_days": 5,
+      "specs": {
+        "firewall_throughput_gbps": 10,
+        "ips_throughput_gbps": 1.4,
+        "ha_support": false,
+        "vpn_users": 200,
+        "license_years": 1
+      },
+      "features": ["IPS 1.4 Gbps", "SSL VPN 200 users", "1 năm FortiGuard UTP"],
+      "notes": "Gói giá thấp cho chi nhánh nhỏ (<80 user). Không đủ năng lực IPS cho hệ thống lõi >= 3 Gbps và không kèm cấu hình HA."
+    },
+    {
+      "sku": "TM-FW-ENT-5G",
+      "name": "Firewall NGFW Enterprise (IPS 5.5 Gbps, Hỗ trợ HA)",
+      "category": "Firewall",
+      "vendor": "Fortinet FortiGate 200F / Palo Alto PA-1410",
+      "unit": "Thiết bị",
+      "unit_price_vnd": 118000000,
+      "cost_vnd": 91000000,
+      "lead_time_days": 10,
+      "specs": {
+        "firewall_throughput_gbps": 27,
+        "ips_throughput_gbps": 5.5,
+        "ha_support": true,
+        "vpn_users": 2500,
+        "license_years": 1
+      },
+      "features": ["IPS 5.5 Gbps", "HA Active-Passive / Active-Active", "2x 10G SFP+ slots", "1 năm License NGFW + IPS + AV", "CO/CQ đầy đủ"],
+      "notes": "Phù hợp doanh nghiệp 200-1000 user, fintech, bệnh viện cần IPS >= 5 Gbps và chạy cụm HA dự phòng."
+    },
+    {
+      "sku": "TM-AP-WIFI6-PRO",
+      "name": "Access Point Wi-Fi 6 Enterprise Dual-Band 4x4",
+      "category": "Wireless",
+      "vendor": "Aruba AP-515 / Cisco Catalyst 9120",
+      "unit": "Thiết bị",
+      "unit_price_vnd": 14500000,
+      "cost_vnd": 10800000,
+      "lead_time_days": 7,
+      "specs": {
+        "wifi_standard": "Wi-Fi 6 (802.11ax)",
+        "max_concurrent_clients": 250,
+        "poe_required": true,
+        "cloud_or_controller": true
+      },
+      "features": ["Wi-Fi 6 AX5400", "Chịu tải 250 thiết bị đồng thời", "MU-MIMO & OFDMA", "Quản lý tập trung Cloud/Controller"],
+      "notes": "Yêu cầu switch cấp nguồn PoE+ (802.3at)."
+    },
+    {
+      "sku": "TM-AP-WIFI6-STD",
+      "name": "Access Point Wi-Fi 6 Standard 2x2 (Văn phòng nhẹ)",
+      "category": "Wireless",
+      "vendor": "Ruijie RG-AP820-L",
+      "unit": "Thiết bị",
+      "unit_price_vnd": 5800000,
+      "cost_vnd": 4200000,
+      "lead_time_days": 5,
+      "specs": {
+        "wifi_standard": "Wi-Fi 6 (802.11ax)",
+        "max_concurrent_clients": 80,
+        "poe_required": true,
+        "cloud_or_controller": true
+      },
+      "features": ["Wi-Fi 6 AX1800", "Chịu tải tối đa 80 thiết bị đồng thời", "Cloud miễn phí"],
+      "notes": "Gói giá thấp, KHÔNG phù hợp khu vực mật độ cao (>100 user/AP) hoặc yêu cầu roaming doanh nghiệp nghiêm ngặt."
+    },
+    {
+      "sku": "TM-WLC-CTRL",
+      "name": "Wireless Controller & License Quản lý Tập trung (Tới 50 AP)",
+      "category": "Wireless",
+      "vendor": "Aruba / Cisco",
+      "unit": "Bộ",
+      "unit_price_vnd": 42000000,
+      "cost_vnd": 31500000,
+      "lead_time_days": 7,
+      "specs": {
+        "max_aps": 50,
+        "seamless_roaming": true,
+        "guest_portal": true
+      },
+      "features": ["Quản lý tới 50 AP", "Seamless Roaming 802.11k/v/r", "Captive Portal"],
+      "notes": "Bắt buộc khi khách hàng yêu cầu roaming mượt cho tầng/tòa nhà hoặc hệ thống controller tại chỗ (on-premise)."
+    },
+    {
+      "sku": "TM-SDWAN-BR",
+      "name": "Thiết bị SD-WAN Chi nhánh (Dual WAN + 4G/LTE Failover)",
+      "category": "SD-WAN / Router",
+      "vendor": "FortiGate 40F / Cisco Meraki MX68",
+      "unit": "Thiết bị",
+      "unit_price_vnd": 18500000,
+      "cost_vnd": 14000000,
+      "lead_time_days": 7,
+      "specs": {
+        "sdwan": true,
+        "vpn_ipsec": true,
+        "dual_wan": true,
+        "throughput_mbps": 600
+      },
+      "features": ["SD-WAN thông minh", "Auto-VPN hub-and-spoke", "Failover đa đường truyền", "Quản trị tập trung"],
+      "notes": "Chuyên dụng cho chuỗi bán lẻ, chi nhánh kết nối về trụ sở chính."
+    },
+    {
+      "sku": "TM-SRV-DEPLOY-LAN",
+      "name": "Dịch vụ khảo sát, lắp đặt, cấu hình mạng LAN/Switch/Wi-Fi (Theo Site/Tầng)",
+      "category": "Deployment Service",
+      "vendor": "Thiên Minh Services",
+      "unit": "Gói",
+      "unit_price_vnd": 28000000,
+      "cost_vnd": 16000000,
+      "lead_time_days": 5,
+      "man_days": 6,
+      "required_roles": ["Network Engineer", "Field Technician"],
+      "specs": {
+        "cabling_audit": true,
+        "vlan_segmentation": true,
+        "documentation": true
+      },
+      "features": ["Khảo sát hiện trạng", "Lắp đặt rack & đấu nối", "Cấu hình VLAN/ACL/QoS", "Nghiệm thu & bàn giao tài liệu As-Built"]
+    },
+    {
+      "sku": "TM-SRV-DEPLOY-SEC",
+      "name": "Dịch vụ thiết kế & triển khai Bảo mật Firewall HA / SD-WAN",
+      "category": "Deployment Service",
+      "vendor": "Thiên Minh Services",
+      "unit": "Gói",
+      "unit_price_vnd": 35000000,
+      "cost_vnd": 19500000,
+      "lead_time_days": 5,
+      "man_days": 7,
+      "required_roles": ["Security Engineer", "Network Architect"],
+      "specs": {
+        "ha_failover_test": true,
+        "ips_tuning": true,
+        "vpn_setup": true
+      },
+      "features": ["Thiết kế kiến trúc bảo mật", "Cấu hình HA & Failover test", "Cấu hình IPS/VPN", "Chuyển giao vận hành"]
+    },
+    {
+      "sku": "TM-SRV-DEPLOY-BRANCH",
+      "name": "Dịch vụ triển khai chuẩn hóa theo Chi nhánh (Rollout/Site)",
+      "category": "Deployment Service",
+      "vendor": "Thiên Minh Services",
+      "unit": "Chi nhánh",
+      "unit_price_vnd": 8500000,
+      "cost_vnd": 5000000,
+      "lead_time_days": 2,
+      "man_days": 2,
+      "required_roles": ["Field Technician", "Network Engineer"],
+      "specs": {
+        "branch_rollout": true
+      },
+      "features": ["Pre-staging cấu hình tại VP", "Lắp đặt tận nơi", "Test kết nối SD-WAN về trụ sở"]
+    },
+    {
+      "sku": "TM-MNT-8X5",
+      "name": "Gói bảo trì & hỗ trợ kỹ thuật tiêu chuẩn 8x5 (SLA phản hồi 8h) / 12 tháng",
+      "category": "Maintenance & SLA",
+      "vendor": "Thiên Minh Support",
+      "unit": "Gói/Năm",
+      "unit_price_vnd": 24000000,
+      "cost_vnd": 13000000,
+      "lead_time_days": 1,
+      "man_days": 3,
+      "specs": {
+        "sla_24x7": false,
+        "response_hours": 8,
+        "duration_months": 12
+      },
+      "features": ["Hỗ trợ giờ hành chính 8x5", "Phản hồi sự cố trong 8h", "Bảo trì định kỳ hàng quý"],
+      "notes": "Không đáp ứng các hồ sơ yêu cầu SLA 24x7 hoặc phản hồi <= 4 giờ."
+    },
+    {
+      "sku": "TM-MNT-24X7-4H",
+      "name": "Gói bảo trì & vận hành cao cấp 24x7 (SLA ứng cứu 4h) / 12 tháng",
+      "category": "Maintenance & SLA",
+      "vendor": "Thiên Minh Support",
+      "unit": "Gói/Năm",
+      "unit_price_vnd": 54000000,
+      "cost_vnd": 31000000,
+      "lead_time_days": 1,
+      "man_days": 6,
+      "specs": {
+        "sla_24x7": true,
+        "response_hours": 4,
+        "onsite_spare": true,
+        "duration_months": 12
+      },
+      "features": ["Trực hỗ trợ 24/7/365", "SLA phản hồi & onsite trong 4h", "Thiết bị dự phòng thay thế tạm thời", "Báo cáo sức khỏe hệ thống hàng tháng"]
+    }
+  ]
+}
+

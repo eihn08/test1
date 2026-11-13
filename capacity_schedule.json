@@ -1,0 +1,84 @@
+{
+  "team_capacity": {
+    "total_engineers": 14,
+    "roles": {
+      "Network Architect": { "headcount": 2, "certifications": ["CCIE Enterprise", "Aruba ACDX"], "daily_capacity_slots": 2 },
+      "Network Engineer": { "headcount": 5, "certifications": ["CCNP", "Aruba ACMP"], "daily_capacity_slots": 5 },
+      "Security Engineer": { "headcount": 3, "certifications": ["Fortinet NSE4/NSE5", "PCNSA"], "daily_capacity_slots": 3 },
+      "Field Technician": { "headcount": 4, "certifications": ["Cabling & Rack Ops", "Safety Cert"], "daily_capacity_slots": 4 }
+    },
+    "max_parallel_projects": 6,
+    "procurement_buffer_days": 5,
+    "overtime_max_utilization_pct": 100,
+    "warning_utilization_pct": 85
+  },
+  "weekly_schedule": [
+    {
+      "week_id": "2026-W46",
+      "label": "Tuần 12/11 - 18/11/2026 (Hiện tại)",
+      "start_date": "2026-11-12",
+      "end_date": "2026-11-18",
+      "allocated_projects": 6,
+      "utilization_pct": 95,
+      "available_man_days": 3,
+      "active_commitments": ["Ngân hàng Á Đông (Cutover)", "KCN Tân Bình (Core Switch)", "Cảng Cát Lái (Wi-Fi)"],
+      "status": "OVERLOADED"
+    },
+    {
+      "week_id": "2026-W47",
+      "label": "Tuần 19/11 - 25/11/2026",
+      "start_date": "2026-11-19",
+      "end_date": "2026-11-25",
+      "allocated_projects": 5,
+      "utilization_pct": 86,
+      "available_man_days": 10,
+      "active_commitments": ["Ngân hàng Á Đông (UAT)", "Chuỗi GymFit (SD-WAN)"],
+      "status": "TIGHT"
+    },
+    {
+      "week_id": "2026-W48",
+      "label": "Tuần 26/11 - 02/12/2026",
+      "start_date": "2026-11-26",
+      "end_date": "2026-12-02",
+      "allocated_projects": 3,
+      "utilization_pct": 58,
+      "available_man_days": 28,
+      "active_commitments": ["Bảo trì định kỳ Q4"],
+      "status": "AVAILABLE"
+    },
+    {
+      "week_id": "2026-W49",
+      "label": "Tuần 03/12 - 09/12/2026",
+      "start_date": "2026-12-03",
+      "end_date": "2026-12-09",
+      "allocated_projects": 2,
+      "utilization_pct": 42,
+      "available_man_days": 38,
+      "active_commitments": ["Tòa nhà Landmark Hub (Phase 1)"],
+      "status": "AVAILABLE"
+    },
+    {
+      "week_id": "2026-W50",
+      "label": "Tuần 10/12 - 16/12/2026",
+      "start_date": "2026-12-10",
+      "end_date": "2026-12-16",
+      "allocated_projects": 2,
+      "utilization_pct": 40,
+      "available_man_days": 40,
+      "active_commitments": ["Hỗ trợ vận hành thường xuyên"],
+      "status": "AVAILABLE"
+    },
+    {
+      "week_id": "2026-W51",
+      "label": "Tuần 17/12 - 23/12/2026",
+      "start_date": "2026-12-17",
+      "end_date": "2026-12-23",
+      "allocated_projects": 1,
+      "utilization_pct": 30,
+      "available_man_days": 45,
+      "active_commitments": ["Bảo trì định kỳ cuối năm"],
+      "status": "AVAILABLE"
+    }
+  ]
+}
+
